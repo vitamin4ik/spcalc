@@ -92,8 +92,9 @@ object SpCalcForm: TSpCalcForm
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
     TabOrder = 0
+    OnClick = Button1Click
   end
-  object LabeledEdit1: TLabeledEdit
+  object ledSunnyHours: TLabeledEdit
     Left = 8
     Top = 69
     Width = 60
@@ -118,7 +119,7 @@ object SpCalcForm: TSpCalcForm
     ParentFont = False
     TabOrder = 1
   end
-  object LabeledEdit2: TLabeledEdit
+  object ledConsumedEl: TLabeledEdit
     Left = 8
     Top = 133
     Width = 60

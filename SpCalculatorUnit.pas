@@ -8,6 +8,9 @@ type
       BatteriesAmount : byte;
    end;
 
+function CalculateBatteriesPanelsAmount(SHoursAmount:Word; ConsumedElectricity:Word): TCalculationResults;
+
+
 implementation
 
 
