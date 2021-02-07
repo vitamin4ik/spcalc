@@ -16,6 +16,8 @@ type
     ledConsumedEl: TLabeledEdit;
     lbBatteriesAmount: TLabel;
     lbSolarPanelsAmount: TLabel;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure btnCalculateClick(Sender: TObject);
     procedure EditExit(Sender: TObject);
     procedure FormCreate(Sender: TObject);
