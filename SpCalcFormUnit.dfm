@@ -2,7 +2,7 @@ object SpCalcForm: TSpCalcForm
   Left = 0
   Top = 0
   BorderStyle = bsDialog
-  Caption = 'Solar Panel Calculator'
+  Caption = '`'
   ClientHeight = 248
   ClientWidth = 462
   Color = clBtnHighlight
@@ -97,7 +97,7 @@ object SpCalcForm: TSpCalcForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label2: TLabel
+  object lbRoofSpaceUsed: TLabel
     Left = 336
     Top = 194
     Width = 15

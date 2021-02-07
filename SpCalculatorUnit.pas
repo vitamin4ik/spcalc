@@ -20,9 +20,12 @@ function CalculateBatteriesPanelsAmount(SHoursAmount:Word; ConsumedElectricity:W
 
 implementation
 
+   uses Math;
+
 
 function CalculateBatteriesPanelsAmount(SHoursAmount:Word; ConsumedElectricity:Word): TCalculationResults;
 begin
+   Math.SetRoundMode(rmUp);
    Result.BatteriesAmount := Round(ConsumedElectricity/(BATT_VOLTAGE*BATT_DEF_CAPACITY*BATT_EFF_RATIO));
    Result.PanelsAmount := Round(ConsumedElectricity/(SHoursAmount*SOLAR_PANEL_POWER));
    Result.RoofSpaceNeeded := Result.PanelsAmount*SOLAR_PANEL_SQUARE;

@@ -17,7 +17,7 @@ type
     lbBatteriesAmount: TLabel;
     lbSolarPanelsAmount: TLabel;
     Label1: TLabel;
-    Label2: TLabel;
+    lbRoofSpaceUsed: TLabel;
     procedure btnCalculateClick(Sender: TObject);
     procedure EditExit(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -62,6 +62,9 @@ begin
    lbSolarPanelsAmount.Caption := s;
    Str(SPCalcResults.BatteriesAmount,s);
    lbBatteriesAmount.Caption := s;
+   Str(SPCalcResults.RoofSpaceNeeded,s);
+   lbRoofSpaceUsed.Caption := s;
+
 end;
 
 procedure TSpCalcForm.EditExit(Sender: TObject);
