@@ -8,7 +8,7 @@ uses
 
 type
   TSpCalcForm = class(TForm)
-    Button1: TButton;
+    btnCalculate: TButton;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -16,7 +16,7 @@ type
     ledConsumedEl: TLabeledEdit;
     lbBatteriesAmount: TLabel;
     lbSolarPanelsAmount: TLabel;
-    procedure Button1Click(Sender: TObject);
+    procedure btnCalculateClick(Sender: TObject);
     procedure EditExit(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -34,7 +34,7 @@ implementation
 uses SpCalculatorUnit;
 
 
-procedure TSpCalcForm.Button1Click(Sender: TObject);
+procedure TSpCalcForm.btnCalculateClick(Sender: TObject);
 var
    SPCalcResults : TCalculationResults;
    SunnyHours, WattsConsumed : Word;
@@ -49,7 +49,7 @@ begin
       if ((ResCode<>0) or (ResCode2<>0)) then
          begin
             MessageBox(SpCalcForm.Handle,
-            PChar('Incorrect input parameter value, hours: '+IntToStr(ResCode)+' watts: '+IntToStr(Rescode2)),'Warning',MB_OK or MB_ICONWARNING);
+            PChar('Incorrect input parameter value, hours: '+ledSunnyHours.Text+' watts: '+ledConsumedEl.Text),'Warning',MB_OK or MB_ICONWARNING);
             Exit;
          end;
    except
@@ -60,7 +60,6 @@ begin
    lbSolarPanelsAmount.Caption := s;
    Str(SPCalcResults.BatteriesAmount,s);
    lbBatteriesAmount.Caption := s;
-
 end;
 
 procedure TSpCalcForm.EditExit(Sender: TObject);
@@ -70,7 +69,7 @@ begin
   except
    on Exception do
       begin
-         MessageBox(SpCalcForm.Handle,'Incorrect  parameter value.Check your input','Warning',MB_OK or MB_ICONWARNING);
+         MessageBox(SpCalcForm.Handle,'Incorrect  parameter value. Check your input','Warning',MB_OK or MB_ICONWARNING);
          TEdit(Sender).SetFocus;
       end;
   end;
@@ -80,6 +79,7 @@ procedure TSpCalcForm.FormCreate(Sender: TObject);
 begin
    ledSunnyHours.OnExit := EditExit;
    ledConsumedEl.OnExit := EditExit;
+   btnCalculate.Brush.Color:=clWhite;
 end;
 
 end.

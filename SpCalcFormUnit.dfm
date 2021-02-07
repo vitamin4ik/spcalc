@@ -1,10 +1,15 @@
 object SpCalcForm: TSpCalcForm
   Left = 0
   Top = 0
+  BorderStyle = bsDialog
   Caption = 'Solar Panel Calculator'
-  ClientHeight = 219
-  ClientWidth = 440
-  Color = clBtnFace
+  ClientHeight = 218
+  ClientWidth = 444
+  Color = clBtnHighlight
+  Constraints.MaxHeight = 250
+  Constraints.MaxWidth = 450
+  Constraints.MinHeight = 250
+  Constraints.MinWidth = 450
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -79,7 +84,7 @@ object SpCalcForm: TSpCalcForm
     Font.Style = [fsItalic]
     ParentFont = False
   end
-  object Button1: TButton
+  object btnCalculate: TButton
     Left = 170
     Top = 179
     Width = 101
@@ -92,7 +97,7 @@ object SpCalcForm: TSpCalcForm
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
     TabOrder = 0
-    OnClick = Button1Click
+    OnClick = btnCalculateClick
   end
   object ledSunnyHours: TLabeledEdit
     Left = 8
