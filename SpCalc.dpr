@@ -3,8 +3,7 @@ program SpCalc;
 uses
   Forms,
   SpCalcFormUnit in 'SpCalcFormUnit.pas' {SpCalcForm},
-  SpCalculatorUnit in 'SpCalculatorUnit.pas',
-  SpCalcPanel in '..\workdocs\Borland Studio Projects\SpCalcPanel.pas';
+  SpCalculatorUnit in 'SpCalculatorUnit.pas';
 
 {$R *.res}
 
