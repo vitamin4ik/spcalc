@@ -14,10 +14,8 @@ type
     Label5: TLabel;
     ledSunnyHours: TLabeledEdit;
     ledConsumedEl: TLabeledEdit;
-    Label1: TLabel;
-    Label2: TLabel;
-    procedure Label3Click(Sender: TObject);
-    procedure Label2Click(Sender: TObject);
+    lbBatteriesAmount: TLabel;
+    lbSolarPanelsAmount: TLabel;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -40,8 +38,10 @@ var
    SPCalcResults : TCalculationResults;
    SunnyHours, WattsConsumed : Word;
    ResCode, ResCode2 : Integer;
+   s: string;
 begin
-
+   SunnyHours :=0;
+   WattsConsumed :=0;	
    try
       Val(ledSunnyHours.Text,SunnyHours,ResCode);
       Val(ledConsumedEl.Text,WattsConsumed,ResCode2);
@@ -52,6 +52,10 @@ begin
       on E:Exception do MessageBox(SpCalcForm.Handle,'Incorrect input parameter value','Warning',MB_OK or MB_ICONWARNING);
    end;
    SPCalcResults := CalculateBatteriesPanelsAmount(SunnyHours,WattsConsumed);
+   s:= lbSolarPanelsAmount.Caption;
+   Str(SPCalcResults.PanelsAmount, s);
+   s:= lbBatteriesAmount.Caption;
+   Str(SPCalcResults.BatteriesAmount, s);
 
 end;
 

@@ -2,7 +2,7 @@ object SpCalcForm: TSpCalcForm
   Left = 0
   Top = 0
   Caption = 'Solar Panel Calculator'
-  ClientHeight = 215
+  ClientHeight = 219
   ClientWidth = 440
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -25,7 +25,6 @@ object SpCalcForm: TSpCalcForm
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    OnClick = Label3Click
   end
   object Label4: TLabel
     Left = 261
@@ -53,35 +52,35 @@ object SpCalcForm: TSpCalcForm
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label1: TLabel
-    Left = 303
+  object lbBatteriesAmount: TLabel
+    Left = 329
     Top = 72
-    Width = 65
-    Height = 24
-    Caption = 'Label1'
+    Width = 15
+    Height = 31
+    Caption = '0'
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clBlue
-    Font.Height = -21
+    Font.Height = -27
     Font.Name = 'Arial'
     Font.Style = [fsItalic]
     ParentFont = False
   end
-  object Label2: TLabel
-    Left = 303
+  object lbSolarPanelsAmount: TLabel
+    Left = 329
     Top = 136
-    Width = 65
-    Height = 24
-    Caption = 'Label1'
+    Width = 15
+    Height = 31
+    Caption = '0'
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clBlue
-    Font.Height = -21
+    Font.Height = -27
     Font.Name = 'Arial'
     Font.Style = [fsItalic]
     ParentFont = False
   end
   object Button1: TButton
     Left = 170
-    Top = 175
+    Top = 179
     Width = 101
     Height = 32
     Caption = 'Calculate'
