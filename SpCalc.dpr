@@ -2,7 +2,8 @@ program SpCalc;
 
 uses
   Forms,
-  SpCalcFormUnit in 'SpCalcFormUnit.pas' {SpCalcForm};
+  SpCalcFormUnit in 'SpCalcFormUnit.pas' {SpCalcForm},
+  SpCalculatorUnit in 'SpCalculatorUnit.pas';
 
 {$R *.res}
 
