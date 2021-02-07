@@ -2,14 +2,14 @@ object SpCalcForm: TSpCalcForm
   Left = 0
   Top = 0
   BorderStyle = bsDialog
-  Caption = '`'
+  Caption = 'Sp Calculator'
   ClientHeight = 248
   ClientWidth = 462
   Color = clBtnHighlight
   Constraints.MaxHeight = 280
   Constraints.MaxWidth = 468
-  Constraints.MinHeight = 2
-  Constraints.MinWidth = 450
+  Constraints.MinHeight = 280
+  Constraints.MinWidth = 468
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
