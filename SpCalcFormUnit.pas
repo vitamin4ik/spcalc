@@ -41,21 +41,24 @@ var
    s: string;
 begin
    SunnyHours :=0;
-   WattsConsumed :=0;	
+   WattsConsumed :=0;
    try
       Val(ledSunnyHours.Text,SunnyHours,ResCode);
       Val(ledConsumedEl.Text,WattsConsumed,ResCode2);
       if ((ResCode<>0) or (ResCode2<>0)) then
-         MessageBox(SpCalcForm.Handle,'Incorrect input parameter value','Warning',MB_OK or MB_ICONWARNING);
-         Exit;
+         begin
+            MessageBox(SpCalcForm.Handle,
+            PChar('Incorrect input parameter value, hours: '+IntToStr(ResCode)+' watts: '+IntToStr(Rescode2)),'Warning',MB_OK or MB_ICONWARNING);
+            Exit;
+         end;
    except
       on E:Exception do MessageBox(SpCalcForm.Handle,'Incorrect input parameter value','Warning',MB_OK or MB_ICONWARNING);
    end;
    SPCalcResults := CalculateBatteriesPanelsAmount(SunnyHours,WattsConsumed);
-   s:= lbSolarPanelsAmount.Caption;
-   Str(SPCalcResults.PanelsAmount, s);
-   s:= lbBatteriesAmount.Caption;
-   Str(SPCalcResults.BatteriesAmount, s);
+   Str(SPCalcResults.PanelsAmount,s);
+   lbSolarPanelsAmount.Caption := s;
+   Str(SPCalcResults.BatteriesAmount,s);
+   lbBatteriesAmount.Caption := s;
 
 end;
 
