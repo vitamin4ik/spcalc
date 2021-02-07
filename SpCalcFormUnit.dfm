@@ -127,7 +127,7 @@ object SpCalcForm: TSpCalcForm
   end
   object ledSunnyHours: TLabeledEdit
     Left = 13
-    Top = 72
+    Top = 71
     Width = 60
     Height = 27
     BevelInner = bvNone
