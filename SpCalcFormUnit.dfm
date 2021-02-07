@@ -11,6 +11,7 @@ object SpCalcForm: TSpCalcForm
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label3: TLabel
@@ -95,7 +96,7 @@ object SpCalcForm: TSpCalcForm
   end
   object ledSunnyHours: TLabeledEdit
     Left = 8
-    Top = 69
+    Top = 72
     Width = 60
     Height = 27
     BevelInner = bvNone
@@ -115,6 +116,7 @@ object SpCalcForm: TSpCalcForm
     Font.Height = -16
     Font.Name = 'Arial'
     Font.Style = [fsBold]
+    MaxLength = 4
     ParentFont = False
     TabOrder = 1
   end
@@ -140,6 +142,7 @@ object SpCalcForm: TSpCalcForm
     Font.Height = -16
     Font.Name = 'Arial'
     Font.Style = [fsBold]
+    MaxLength = 7
     ParentFont = False
     TabOrder = 2
   end

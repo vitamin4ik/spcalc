@@ -17,8 +17,9 @@ type
     lbBatteriesAmount: TLabel;
     lbSolarPanelsAmount: TLabel;
     procedure Button1Click(Sender: TObject);
+    procedure EditExit(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
-    { Private declarations }
   public
     { Public declarations }
   end;
@@ -60,6 +61,25 @@ begin
    Str(SPCalcResults.BatteriesAmount,s);
    lbBatteriesAmount.Caption := s;
 
+end;
+
+procedure TSpCalcForm.EditExit(Sender: TObject);
+begin
+  try
+      StrToInt(TEdit(Sender).Text);
+  except
+   on Exception do
+      begin
+         MessageBox(SpCalcForm.Handle,'Incorrect  parameter value.Check your input','Warning',MB_OK or MB_ICONWARNING);
+         TEdit(Sender).SetFocus;
+      end;
+  end;
+end;
+
+procedure TSpCalcForm.FormCreate(Sender: TObject);
+begin
+   ledSunnyHours.OnExit := EditExit;
+   ledConsumedEl.OnExit := EditExit;
 end;
 
 end.
