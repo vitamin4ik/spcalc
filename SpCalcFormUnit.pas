@@ -57,14 +57,23 @@ begin
    except
       on E:Exception do MessageBox(SpCalcForm.Handle,'Incorrect input parameter value','Warning',MB_OK or MB_ICONWARNING);
    end;
-   SPCalcResults := CalculateBatteriesPanelsAmount(SunnyHours,WattsConsumed);
-   Str(SPCalcResults.PanelsAmount,s);
-   lbSolarPanelsAmount.Caption := s;
-   Str(SPCalcResults.BatteriesAmount,s);
-   lbBatteriesAmount.Caption := s;
-   Str(SPCalcResults.RoofSpaceNeeded,s);
-   lbRoofSpaceUsed.Caption := s;
 
+   SpCalculator := TSpCalculator.Create;
+   try
+      SpCalculator.HoursAmount :=SunnyHours;
+      SpCalculator.ConsumedElectricity :=WattsConsumed;
+      SpCalculator.CalculateBatteriesPanelsAmount;
+
+  // SPCalcResults := CalculateBatteriesPanelsAmount(SunnyHours,WattsConsumed);
+      Str(SpCalculator.PanelsAmount,s);
+      lbSolarPanelsAmount.Caption := s;
+      Str(SpCalculator.BatteriesAmount,s);
+      lbBatteriesAmount.Caption := s;
+      Str(SpCalculator.RoofSpaceNeeded,s);
+      lbRoofSpaceUsed.Caption := s;
+   finally
+      FreeAndNil(SpCalculator);
+   end;
 end;
 
 procedure TSpCalcForm.EditExit(Sender: TObject);
